@@ -17,11 +17,13 @@ const submitPromise = e => {
 
   const makePromise = () => {
     return new Promise((resolve, reject) => {
-      if (rbFilled.checked) {
-        resolve(`✅ Fulfilled promise in ${delayData}ms`);
-      } else if (rbRejected.checked) {
-        reject(`❌ Rejected promise in ${delayData}ms`);
-      }
+      setTimeout(() => {
+        if (rbFilled.checked) {
+          resolve(`✅ Fulfilled promise in ${delayData}ms`);
+        } else if (rbRejected.checked) {
+          reject(`❌ Rejected promise in ${delayData}ms`);
+        }
+      }, delayData);
     });
   };
 
